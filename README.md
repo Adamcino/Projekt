@@ -27,3 +27,6 @@ Do 20.11.2017 - Nechat zkontrolovat
 1)
 Instalace Virtual Boxu
 Přidání Zabbix do virtual Boxu. ( Pomocí youtube )
+Zabbix Server :
+Username = root
+Password = zabbix
