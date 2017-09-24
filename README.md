@@ -23,3 +23,7 @@ Do 10.11.2017 - Zkompletovat dokumentaci o těchto provedenich.
 Do 20.11.2017 - Nechat zkontrolovat
 
 + Seznam vecí co můžu dohlížet.
+
+1)
+Instalace Virtual Boxu
+Přidání Zabbix do virtual Boxu. ( Pomocí youtube )
