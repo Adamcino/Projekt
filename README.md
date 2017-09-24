@@ -26,6 +26,8 @@ Do 20.11.2017 - Nechat zkontrolovat
 
 1)
 Instalace Virtual Boxu
+Stažení - Ubuntu server
+Stažení Putty - klient ssh
 Přidání Zabbix do virtual Boxu. ( Pomocí youtube )
 Zabbix Server :
 Username = root
