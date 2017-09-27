@@ -32,3 +32,18 @@ Přidání Zabbix do virtual Boxu. ( Pomocí youtube )
 Zabbix Server :
 Username = root
 Password = zabbix
+
+
+ZABBIX 3.4
+u-adam p-adam
+u-adamecek
+
+
+# wget http://repo.zabbix.com/zabbix/3.4/debian/pool/main/z/zabbix-release/zabbix-release_3.4-1+stretch_all.deb
+# dpkg -i zabbix-release_3.4-1+stretch_all.deb
+# apt-get update
+
+# apt-get install zabbix-server-mysql zabbix-frontend-php
+# apt-get install zabbix-proxy-mysql
+# zcat /usr/share/doc/zabbix-server-mysql/create.sql.gz | mysql -uzabbix -p zabbix
+# zcat /usr/share/doc/zabbix-server-pgsql/create.sql.gz | psql -U <username> zabbix
