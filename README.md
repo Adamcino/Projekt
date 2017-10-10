@@ -1,4 +1,4 @@
-Projekt - ZABBIX
+Projekt - ZABBIX 3.4
 Zabbix slouží k monitorování aktivních síťových prvků, které jsou připojeny do počítačové sítě.
 Můžeme sledovat stav a sbírat různé informace o všem, co má IP adresu. 
 
@@ -11,8 +11,40 @@ Můžeme sledovat stav a sbírat různé informace o všem, co má IP adresu.
 - IPMI (http://www.svetsiti.cz/clanek.asp?cid=IPMI-V20-zjednodusuje-spravu-serveru-28112005)
 - JMX
 - SSH/Telnet
+- XML XPath – extrahuje hodnotu nebo fragment z dat XML pomocí XPath
 
 
+Proč používat Zabbix? 
+
+Dohledových systému je celá řada. Uvedu zde nejpodstatnější body proč používat dohledový systém Zabbix především z technického hlediska.
+
+- rychlost
+- otevřenost (licence GPL)
+- přehledné prostředí
+- intuitivní ovládání
+- živý a rychlý vývoj
+- mnohostrannost (možné sledovat prakticky cokoliv)
+
+Agent
+
+Je klientský proces běžící na hostech. Sbírá informace a průběžně je předává serveru.
+
+Zabbix agent
+
+Active checks : agent požádá server o to, co má monitorovat a průběžně serveru odesílá hodnoty všech požadovaných testů
+Passive checks : server pošle agentu žádost o data (např. velikost volné paměti). Agent provede požadovaný test a odešle serveru hodnotu
+monitoring logů
+použití vlastních testů
+
+
+
+Zabbix 3.4 Novinky oproti starším modelům
+
+- Přepracovaný dashboard
+- Nové možnosti předběžného zpracování dat
+- Podpora vzdálených příkazů prostřednictvím Zabbix proxy
+- Snadnější správa časových období – pomocí maker
+- Vylepšení na straně serveru
 
 
 1)
@@ -25,6 +57,7 @@ Přidání Zabbix do virtual Boxu.
 Úbuntu server 64
 u-adam p-adam
 name : AdamU
+
 
 
 Instalace zabbix
@@ -43,12 +76,23 @@ Instalace zabbix
  apt-get install zabbix-agent
  service zabbix-agent start
   
+hostname: ZabbixSrv
+Name: AdamU
+Username: adam
+Password: adam
+system mail name - Zabbix.adam
+ip 192.168.1.212
+  
 Stáhl jsem si do windows Virtual box , kde jsem si vytvořil nový projekt(Zabbix). Kde jsem nastavil 
 Linux , ubuntu 64b , 2048 MB ram a velikost 20 Gb. Nastavil jsem síťový most a změnil adresu.
 Pak jsem si stáhl (ubuntu-16.04.3-server-amd64),které jsem vložil do VB, ale jelikož mam 32 b tak to nefungovalo , proto jsem si musel  v BIOSU povolit i 64 b.
 Poté jsem ubuntu nakonfiguroval a nainstaloval SSH. Z internetu jsem stahl PUTTTY , abych mohl příkazy kopírovat a nemusel je opisovat.
 Putty jsem spustil a nastavil stejnou ip jak na VB, čímž jsem to propojil. Pak jsem pomoci příkazu nainstaloval Zabbix 3.4 a Mysql.
- 
+Všechno dělano v rootu. 
  
 
+Nainstalovat a nakonfigurovat Zabbix (klient Zabbix server) do virtual boxu. 
+Prozkoumat vazbu Zabbix SNMP a dohlížet os linux - pomoci SNMP.
+Prozkoumat JMX modul pro Zabbix a nakonfigurovat vazbu java server Zabbix.
+Napsat první skript pro trigger alarm . 
 
