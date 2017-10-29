@@ -60,6 +60,8 @@ name : AdamU
 
 
 
+
+
 Instalace zabbix
  wget http://repo.zabbix.com/zabbix/3.4/debian/pool/main/z/zabbix-release/zabbix-release_3.4-1+stretch_all.deb
  dpkg -i zabbix-release_3.4-1+stretch_all.deb
@@ -90,6 +92,19 @@ Poté jsem ubuntu nakonfiguroval a nainstaloval SSH. Z internetu jsem stahl PUTT
 Putty jsem spustil a nastavil stejnou ip jak na VB, čímž jsem to propojil. Pak jsem pomoci příkazu nainstaloval Zabbix 3.4 a Mysql.
 Všechno dělano v rootu. 
  
+SNMP
+
+SNMP je jednoduchý, široce rozšířený a užitečný standardizovaný protokol, který slouží k získávání nebo nastavování hodnot na určitém zařízení. Obdobou je například WMI od firmy Microsoft. Podporu SNMP má velká řada zařízení, například aktivní síťové prvky, počítačová čidla, tiskárny, přístupové body nebo pomocí softwaru a ovladačů ji mohou získat osobní počítače a servery. Hodnoty můžeme získávat v pravidelném intervalu a ty pak jednoduše ukládat do databáze spolu s časem a následně vykreslit do grafu. Přehledně tak můžeme zobrazit třeba vytížení procesoru, průběh teploty nebo datový tok na portu přepínače.
+
+Jak SNMP funguje
+Protokol SNMP vyžaduje pro komunikaci dvě strany. Jednou entitou je správce (manager) a druhou agent. SNMP pracuje ve dvou režimech činnosti:
+
+Správce posílá dotazy agentovi a přijímá odpovědi. Hodnoty tedy může získávat i více správců a mohou se ptát kdykoliv.
+Agent zasílá oznámení (trapy) na adresu správce. V nějakých definovaných situacích (překročení nějaké hodnoty nebo i v pravidelném intervalu) odesílá agent jednomu správci hodnoty.
+Protokol SNMP nyní existuje ve třech verzích. SNMPv1 a SNMPv2c používají pro autentizaci community string, v podstatě textové heslo. V SNMPv3 je možno využít autentizaci pomocí jména a hesla a šifrování.
+
+SNMP používá pro komunikaci UDP protokol, díky čemuž je velmi rychlé, ale může dojít ke ztrátě (nedoručení) zasílané informace (paketu). Od verze 2 je implementována kontrola doručení, takže ke ztrátě by nemělo dojít. Standardně se používá port 161 (SNMP) na straně agenta (pro dotazy) a port 162 (SNMPTRAP) na straně serveru (pro trapy). Klient, který posílá dotaz, zvolí dynamický port, z kterého posílá dotaz na port 161. Agent odpovídá z portu 161 na dynamický port klienta. V praxi je pro každý dotaz použit jiný dynamický port.
+
 
 Nainstalovat a nakonfigurovat Zabbix (klient Zabbix server) do virtual boxu. 
 Prozkoumat vazbu Zabbix SNMP a dohlížet os linux - pomoci SNMP.
