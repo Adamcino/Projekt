@@ -111,3 +111,13 @@ Prozkoumat vazbu Zabbix SNMP a dohlížet os linux - pomoci SNMP.
 Prozkoumat JMX modul pro Zabbix a nakonfigurovat vazbu java server Zabbix.
 Napsat první skript pro trigger alarm . 
  
+ 
+ 
+ Resetovani hesla MYSQL 
+ https://www.youtube.com/watch?v=bLSNw40lB7g
+ 
+ mysql --user=root mysql
+ update user set password=PASSWORD('adam') where user='root';
+ flush privileges;
+ exit
+ systemctl restart mariandb
