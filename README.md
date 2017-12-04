@@ -125,3 +125,5 @@ Napsat první skript pro trigger alarm .
  Při konfiguraci Zabbixu nastala chyba s připojením.  [Zabbix@localhost] cannot join.
  Mělo to být tím , že jsem zadal špatné heslo , ale nebylo tomu tak. 
  Nasledně jsem tento problém vyřešil pomocí příkazů : -
+ 
+ANOTACE
