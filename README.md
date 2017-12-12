@@ -127,3 +127,95 @@ Napsat první skript pro trigger alarm .
  Nasledně jsem tento problém vyřešil pomocí příkazů : -
  
 ANOTACE
+
+
+
+
+
+
+
+
+
+
+https://www.youtube.com/watch?v=jpj933xdaHc - zabbix
+
+
+
+
+Congratulations! You have successfully installed Zabbix frontend.
+Configuration file "/usr/share/zabbix/conf/zabbix.conf.php" created.
+
+
+Step 1: Login with Root
+#su -
+password
+
+Step 2: Update the System
+#apt-get update
+
+Step 3: Install LAMP Server
+#apt-get install lamp-server^
+
+Step 4: Adding Zabbix Server Repositories to Ubuntu 16.04
+#wget http://repo.zabbix.com/zabbix/3.0/ubu...
+#dpkg -i zabbix-release_3.0-1+xenial_all.deb
+#apt-get update
+
+Step 5: Install Zabbix Server
+#apt-get install zabbix-server-mysql zabbix-frontend-php
+
+Step 6: Database for Zabbix Server
+#mysql -u root -p
+
+#CREATE DATABASE zabbixdb;
+#GRANT ALL on zabbixdb.* to zabbix@localhost IDENTIFIED BY 'anand';
+#FLUSH PRIVILEGES;
+#exit
+
+Step 7: Now restart zabbix database schema in newly created database
+
+#cd /usr/share/doc/zabbix-server-mysql
+#zcat create.sql.gz | mysql -u root -p zabbixdb
+
+Step 8: Edit Zabbix Configuration File
+# nano /etc/zabbix/zabbix_server.conf
+
+Update the following
+DBHost=localhost
+  DBName=zabbixdb
+  DBUser=zabbix
+  DBPassword=anand
+
+Step 9: Restart Services
+
+#service apache2 restart
+#service zabbix-server restart
+
+Step 10: Start Zabbix Server Web Installer
+http://ipaddres/zabbix
+
+Click Next
+
+Step 11: Make the following Changes to the following file
+
+#cd /etc/php/7.0/apache2
+#nano php.ini
+
+Changes:
+
+date.timezone= Asia/Kolkata
+
+Step 12: Install Php Extensions
+
+#apt-get install php7.0-xml
+#apt-get install php7.0-bcmath
+#apt-get install php7.0-mbstring
+
+Restart Services
+#service apache2 restart
+#service zabbix-server restart
+
+Name: Zabbix Server
+
+Login Name: admin
+password: zabbix
