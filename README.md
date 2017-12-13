@@ -131,7 +131,7 @@ ANOTACE
 
 
 
-
+Windows to zabbix - https://www.youtube.com/watch?v=dqKbY88X7xk
 
 
 
