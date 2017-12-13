@@ -135,7 +135,7 @@ ANOTACE
 
 
 
-
+https://tecadmin.net/install-zabbix-agent-windows-system/
 
 https://www.youtube.com/watch?v=jpj933xdaHc - zabbix
 
