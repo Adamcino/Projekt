@@ -219,3 +219,9 @@ Name: Zabbix Server
 
 Login Name: admin
 password: zabbix
+
+
+netstat -nl | grep -E "(Local|3306)" - bind adresss
+
+
+
